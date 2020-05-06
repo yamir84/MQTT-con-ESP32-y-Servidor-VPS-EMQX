@@ -30,8 +30,8 @@
 #include <DHT.h>
 #include <DHT_U.h>
 
-#define WIFI_SSID "CRESPO"    //Su SSID del WIFI
-#define WIFI_PASS "16112005"  //Su Password del WIFI
+#define WIFI_SSID "WIFI_SSID"    //Su SSID del WIFI
+#define WIFI_PASS "WIFI_PASSWORD"  //Su Password del WIFI
 
 #define MQTT_CLIENT_NAME "ESP32_0000002"         //Cliente ID MQTT, Base ESP32_ + DEVICE_ID
 #define MQTT_CLIENT_USER "curso_iot"             //User MQTT
