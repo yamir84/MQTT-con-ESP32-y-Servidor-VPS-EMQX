@@ -126,13 +126,11 @@ int resolution = 8;
               Serial.println("Conectado! a servidor MQTT CursoIOT CubaElectronica" );
 
               // Nos suscribimos a comandos
-              //char topico[25];
               String topico_serial = device_id + "/command";
               topico_serial.toCharArray(topico,25);
               client.subscribe(topico);
 
               // Nos suscribimos a dimmer
-              //char topico2[25];
               String topico_serial2 = device_id + "/dimmer";
               topico_serial2.toCharArray(topico2,25);
               client.subscribe(topico2);
