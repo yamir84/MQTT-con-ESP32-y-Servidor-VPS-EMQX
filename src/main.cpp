@@ -46,7 +46,7 @@
 const String device_id = "0000002";         // ID del Dispositivo
 long dimmer;
 long relay1;
-char mqttBroker[] = "cubaelectronica.com";  // Direccíon del Brojer
+char mqttBroker[] = "cubaelectronica.com";  // Direccíon del Brojer 192.168.0.15
 char payload[150];                          // Tamaño del mensaje
 char topico[150];                           // Tamaño del topico
 char topico2[150];                          // Tamaño del topico2
@@ -93,10 +93,23 @@ int resolution = 8;
       if (str_topic == device_id + "/command"){
           if ( mensaje == "on") {
             digitalWrite(RELAY1, HIGH);
+            //////////////Respondemos OK///////////
+            String topico_aux = device_id + "/respuesta";
+            topico_aux.toCharArray(topico,25);
+            client.publish(topico, "on_ok"); //Publicar respuesta on ok por MQTT
+            ///////////////////////////////////////
           }
           if ( mensaje == "off") {
             digitalWrite(RELAY1, LOW);
+            ///////////////Respondemos OK//////////
+            String topico_aux = device_id + "/respuesta";
+            topico_aux.toCharArray(topico,25);
+            client.publish(topico, "off_ok"); //Publicar respuesta off ok por MQTT
+            ///////////////////////////////////////
           }
+
+
+
       }
 
       if (str_topic == device_id + "/dimmer"){
@@ -124,15 +137,11 @@ int resolution = 8;
          if (client.connect(MQTT_CLIENT_NAME, MQTT_CLIENT_USER, MQTT_CLIENT_PASSWORD))
             {
               Serial.println("Conectado! a servidor MQTT CursoIOT CubaElectronica" );
-
               // Nos suscribimos a comandos
-              //char topico[25];
               String topico_serial = device_id + "/command";
               topico_serial.toCharArray(topico,25);
               client.subscribe(topico);
-
               // Nos suscribimos a dimmer
-              //char topico2[25];
               String topico_serial2 = device_id + "/dimmer";
               topico_serial2.toCharArray(topico2,25);
               client.subscribe(topico2);
@@ -222,7 +231,7 @@ void loop()
                   to_send.toCharArray(payload, 25);
                   String topico_aux = device_id + "/digital";
                   topico_aux.toCharArray(topico,25);
-                  client.publish(topico, payload);
+                  client.publish(topico, payload); //Publicar por MQTT
                   alarma1.active = false;
                }
           }

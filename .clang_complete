@@ -1,5 +1,5 @@
--IE:/yamir-hidalgo/2020/IOT/E32/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/PlatformIO/ubidots/UbidotsTest/include
--IE:/yamir-hidalgo/2020/IOT/E32/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/PlatformIO/ubidots/UbidotsTest/src
+-IE:/yamir-hidalgo/2020/IOT/E32/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/PlatformIO/MQTT CursoESP32/include
+-IE:/yamir-hidalgo/2020/IOT/E32/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/esp32lab-9e4a97c1a6915fda2ea933656ce1c10b328acb9a/PlatformIO/MQTT CursoESP32/src
 -IC:/Users/asesoria0605/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src
 -IC:/Users/asesoria0605/.platformio/lib/PubSubClient_ID89/src
 -IC:/Users/asesoria0605/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/config
